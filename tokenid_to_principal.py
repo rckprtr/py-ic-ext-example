@@ -5,5 +5,7 @@ from ic import Principal
 
 def tokenIdentifier(canister_id, index):
     cip = Principal.from_str(canister_id).bytes
-    hex = bytes.hex(b"\x0Atid" + cip + index.to_bytes(4, 'big'))
-    return Principal.from_hex(hex)
+    return Principal(b"\x0Atid" + cip + index.to_bytes(4, 'big'))
+
+
+print(tokenIdentifier("bzsui-sqaaa-aaaah-qce2a-cai", 4350))
